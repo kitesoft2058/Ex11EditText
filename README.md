@@ -21,11 +21,11 @@ EditText의 여러 속성과 기법 알아보기
 # 실행모습
 <div>
   <h4>inputType속성에 따라 다른 모양의 소프트키패드 [ text | number | phone | textPassword ]</h4>  
-  <img src="device-2019-05-29-124934.png" width="20%"/>
-  <img src="device-2019-05-29-125003.png" width="20%"/>
-  <img src="device-2019-05-29-125034.png" width="20%"/>
-  <img src="device-2019-05-29-125106.png" width="20%"/>
-  <img src="device-2019-05-29-125203.png" width="20%"/>
+  <img src="device-2019-05-29-124934.png" width="19%"/>
+  <img src="device-2019-05-29-125003.png" width="19%"/>
+  <img src="device-2019-05-29-125034.png" width="19%"/>
+  <img src="device-2019-05-29-125106.png" width="19%"/>
+  <img src="device-2019-05-29-125203.png" width="19%"/>
 </div>
 <div>
   <h4>EditText의 기타 속성들에 따른 실행모습</h4>
