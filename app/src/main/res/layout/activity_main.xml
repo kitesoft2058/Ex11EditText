@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:focusableInTouchMode="true"
+    tools:context=".MainActivity">
+    <!--focusableInTouchMode="true"로 하면 EditText가 기본적으로 가지게 되는 Focus를 뺏어올 수 있음-->
+
+    <!--///////// 아래의 EditText실습이 모두 종료된 후 실습 /////////////////////-->
+    <!--소프트키패드 강제 보이기/숨기기/토글하기-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="show SOFTKEY"
+            android:textAllCaps="false"
+            android:onClick="clickBtn"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hide SOFTKEY"
+            android:textAllCaps="false"
+            android:onClick="clickBtn2"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="toggle SOFTKEY"
+            android:textAllCaps="false"
+            android:onClick="clickBtn3"/>
+    </LinearLayout>
+    <!-- ///////////////////////////////////////////////////////////////////////// -->
+
+    <!--inputType속성 주요 설정값-->
+    <!-- -지정이 없으면 엔터를 가진 키패드가 올라옴.(줄바꿈이 됨)- height값이 wrap이면 뷰가 커지고 수치값이면 안에 내용물이 안보이게 됨.-->
+    <!-- -"date": 숫자 키패드(/, -, . 3개의 특수문자 키) - 줄바꿈 안됨.(포커스가 다음으로 이동됨)-->
+    <!-- -"datetime": 숫자 키패드(/, -, . , :(롱클릭) 4개의 특수문자 키) - 줄바꿈 안됨.-->
+    <!-- -"number":숫자 키패드 - 줄바꿈 안됨.-->
+    <!-- -"numberSigned": 음수부호 입력 가능 - 줄바꿈 안됨.-->
+    <!-- -"phone":다이얼 키패드 - 줄바꿈 안됨.-->
+    <!-- -"text" : -줄바꿈 안됨-->
+    <!-- -"textCapCharacters" : 모두 대문자 -줄바꿈 안됨-->
+    <!-- -"textCapWords" : 단어의 첫글자에서 대문자 다음부터 자동 소문자(띄어쓰기 후 다시 대문자)-->
+    <!-- -"textCapSentences " : 문자의 첫글자 대문자.-->
+    <!-- -"textMultiLine" : 여러줄 입력 -엔터가 줄바꿈으로 됨.-->
+    <!-- -"textPassword" : 입력된 글자가 가려짐 : 영어만 입력가능함 -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="input data - inputType attribute"
+        android:inputType="text"/>
+
+    <!-- multiLine의 뷰 높이 관련 -->
+    <!-- 라인수 관련(뷰의 높이사이즈 관련) 속성 -->
+    <!-- lines : 처음 화면에 보이는 EditTest의 라인수 [ex. line=3 이면 3줄크기의 EditText 출력 - 단, 스크롤을 통해 여러줄 입력가능] -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="input multi line : lines속성"
+        android:inputType="textMultiLine"
+        android:lines="3"
+        android:gravity="top"/>
+
+    <!-- maxLines : 처음 보일때는 한줄입력 EditText로 보여지다가 엔터를 통해 늘어날때 최대 3줄크기까지 늘어남. (스크롤을 통해 여러줄 입력은 여전히 가능함) -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="input multi line : maxLines속성"
+        android:inputType="textMultiLine"
+        android:maxLines="3"/>
+
+    <!-- 특정 줄 수 입력은 현재는 없으며 한줄만 입력가능하게 하는것은 inputType=text로 처리! [line속성은 무시됨] -->
+
+    <!--EditText에 이미지 넣기-->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:drawableRight="@drawable/ic_favorite_black_40dp"/>
+
+    <!--EditText 커서 안보이기-->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="no cursor"
+        android:cursorVisible="false"/>
+
+    <!-- width를 글자수로 지정하기-->
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="5"/>
+
+    <!-- 배경을 바꾸면 언더라인이 없어짐-->
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:background="#008800"
+        android:textColor="#FFFFFF"
+        android:padding="8dp"
+        android:gravity="top"
+        android:hint="No Under Line"
+        android:textColorHint="#EEEEEE"/>
+
+    <!-- 전화번호 입력폼에 유용한 기법 -->
+    <!--EditText의 포커스 자동 이동 : Java 코드를 통한 커서 이동처리 필요함. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edit01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="3"
+            android:inputType="number"
+            android:maxLength="3"
+            android:hint="010"
+            android:gravity="center"/>
+        <EditText
+            android:id="@+id/edit02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="4"
+            android:maxLength="4"
+            android:inputType="number"
+            android:hint="1234"
+            android:gravity="center"/>
+        <EditText
+            android:id="@+id/edit03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="4"
+            android:maxLength="4"
+            android:inputType="number"
+            android:hint="5678"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
