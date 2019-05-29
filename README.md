@@ -29,11 +29,11 @@ EditText의 여러 속성과 기법 알아보기
 </div>
 <div>
   <h4>EditText의 기타 속성들에 따른 실행모습</h4>
-  <img src="device-2019-05-29-125451.png" width="20%"/>
-  <img src="device-2019-05-29-125638.png" width="20%"/>
-  <img src="device-2019-05-29-125909.png" width="20%"/>
-  <img src="device-2019-05-29-125949.png" width="20%"/>
-  <img src="device-2019-05-29-131719.png" width="20%"/>
+  <img src="device-2019-05-29-125451.png" width="19%"/>
+  <img src="device-2019-05-29-125638.png" width="19%"/>
+  <img src="device-2019-05-29-125909.png" width="19%"/>
+  <img src="device-2019-05-29-125949.png" width="19%"/>
+  <img src="device-2019-05-29-131719.png" width="19%"/>
 </div>
 
 # 실행모습 GIF
